@@ -207,12 +207,12 @@ if __name__ == '__main__':
         if fn[-3:] == '.py':
             fn = os.path.join(fn)
             shutil.copy(fn, os.path.join(log_dir, 'src', fn))
-    coding_folder = ['utils_model', 'utils_data', 'utils']
-    for i_folder in coding_folder:
-        for fn in os.listdir(i_folder):
+    src_dir_list = ['utils_model', 'utils_data', 'utils']
+    for src_dir in src_dir_list:
+        for fn in os.listdir(src_dir):
             if fn[-3:] == '.py':
-                fn = os.path.join(i_folder, fn)
-                os.makedirs(os.path.join(log_dir, 'src', i_folder), exist_ok=True)
+                fn = os.path.join(src_dir, fn)
+                os.makedirs(os.path.join(log_dir, 'src', src_dir), exist_ok=True)
                 shutil.copy(fn, os.path.join(log_dir, 'src', fn))
     f = open(os.path.join(log_dir, 'command.txt'), 'w')
     f.write(' '.join(sys.argv))
