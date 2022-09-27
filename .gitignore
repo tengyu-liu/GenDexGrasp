@@ -135,3 +135,4 @@ dataset/
 logs_train_cvae/
 logs_inf_cvae/
 logs_opt/
+envs/assets/
