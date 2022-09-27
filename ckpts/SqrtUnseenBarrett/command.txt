@@ -1,0 +1,1 @@
+train_pointnet_cvae.py --id=6 --disable_barrett --comment=UnseenBarrett_A3 --batchsize=128 --n_epochs=36 --lr=1e-4 --lw_recon=1000 --lw_kld=0.05 --ann_temp=1.5 --ann_per_epochs=2 --batches_per_print=500 --attn_loss_alpha=3.
