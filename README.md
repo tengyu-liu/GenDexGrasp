@@ -1,7 +1,7 @@
 # GenDexGrasp
 Code Repository for ICRA 2023 Submission paper GenDexGrasp: Generalizable Dexterous Grasping
 
-by Puhao Li<sup> *</sup>, Tengyu Liu<sup> *</sup>, Yuyang Li, YIran Geng, Yixin Zhu, Yaodong Yang, Siyuan Huang
+by Puhao Li<sup> *</sup>, Tengyu Liu<sup> *</sup>, Yuyang Li, Yiran Geng, Yixin Zhu, Yaodong Yang, Siyuan Huang
 ![Teaser](./assets/figures/teaser.png)
 
 + [ ] illustration here...
