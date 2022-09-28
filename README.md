@@ -9,7 +9,17 @@ by Puhao Li<sup> *</sup>, Tengyu Liu<sup> *</sup>, Yuyang Li, YIran Geng, Yixin
 
 ## Dependencies
 
+Run the following to install a subset of necessary python packages for our code
 
+```sh
+pip install -r requirements.txt
+```
+
+Note that the `pytorch_kinematics` dependency is modified, you should install from the source code in [pytorch_kinematics](./thirdparty/pytorch_kinematics)
+
+## Usage
+
+Train the 
 
 
 ## TODO List
