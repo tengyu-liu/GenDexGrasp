@@ -109,8 +109,6 @@ pyquaternion==0.9.9
 pyrsistent==0.18.1
 PySocks @ file:///tmp/build/80754af9/pysocks_1605305779399/work
 python-dateutil==2.8.2
-# Editable install with no version control (pytorch-kinematics==0.3.0)
--e /home/puhao/dev/site-packages/pytorch_kinematics
 pytz==2022.1
 PyYAML==6.0
 pyzmq==23.2.0
