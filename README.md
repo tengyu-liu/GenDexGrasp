@@ -26,19 +26,15 @@ Run the following to install a subset of necessary python packages for our code
 pip install -r requirements.txt
 ```
 
-Note that the `pytorch_kinematics` dependency is modified, you should install it from the source code in `thirdparty/pytorch_kinematics`
+Note that the `pytorch_kinematics` dependency is modified, you should install it from the source code in `thirdparty/pytorch_kinematics/`
 
 
 
 ## Data Preparation
 
-#### Robots
+#### Robots and Objects
 
-
-
-#### Objects
-
-
+We train and test on 58 daily objects from the YCB and ContactDB dataset, together with 5 robotic hands(EZGripper, Barrett Hand, Robotiq-3F, Allegro and Shadowhand) ranging from two to five fingers.
 
 #### Grasp Dataset
 
