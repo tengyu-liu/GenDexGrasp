@@ -16,11 +16,11 @@ Generating dexterous grasping has been a longstanding and challenging robotic ta
 
 ![Teaser](./assets/figures/teaser.png)
 
-GenDexGrasp is trained on our proposed large-scale multi-hand grasping dataset **MultiDex** synthesized with force closure optimization. By leveraging the contact map as a hand-agnostic intermediate representation, GenDexGrasp efficiently generates diverse and plausible grasping poses with a high success rate and can transfer among diverse multi-fingered robotic hands. Compared with previous methods, GenDexGrasp achieves a three-way trade-off among success rate, inference speed, and diversity.
+GenDexGrasp is trained on our proposed large-scale multi-hand grasping dataset [**MultiDex**](https://sites.google.com/view/gendexgrasp/multidex) synthesized with force closure optimization. By leveraging the contact map as a hand-agnostic intermediate representation, GenDexGrasp efficiently generates diverse and plausible grasping poses with a high success rate and can transfer among diverse multi-fingered robotic hands. Compared with previous methods, GenDexGrasp achieves a three-way trade-off among success rate, inference speed, and diversity.
 
 ## Pipeline
 
-We first collect a large-scale synthetic dataset for multiple hands with [DFC](https://arxiv.org/abs/2104.09194) . Then, we train a CMap-CVAE to generate hand-agnostic contact maps for unseen objects. We finally optimize grasping poses for unseen hands using the generated contact maps.
+We first collect a large-scale synthetic dataset for multiple hands with [Differentiable Force Closure](https://arxiv.org/abs/2104.09194) . Then, we train a CMap-CVAE to generate hand-agnostic contact maps for unseen objects. We finally optimize grasping poses for unseen hands using the generated contact maps.
 
 ![pipelinde](assets/figures/pipeline.png)
 
@@ -200,6 +200,6 @@ A large-scale grasping dataset for multiple robotic hands. Coming soon...
   - [x] Dependency (requirements.txt)
   - [x] pytorch_kinematics
   - [x] IsaacGym
-+ [ ] MultiDex Datatse
++ [ ] MultiDex Dataset
   + [ ] Download link
   + [ ] Usage
