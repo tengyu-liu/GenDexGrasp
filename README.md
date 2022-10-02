@@ -24,7 +24,7 @@ GenDexGrasp is trained on our proposed large-scale multi-hand grasping dataset [
 
 ## Pipeline
 
-We first collect a large-scale synthetic dataset for multiple robotic hands with [Differentiable Force Closure](https://arxiv.org/abs/2104.09194). Then, we train a CMap-CVAE to generate hand-agnostic contact maps for unseen objects. We finally optimize grasping poses for unseen hands using the generated contact maps.
+We first collect a large-scale synthetic dataset for multiple robotic hands with [Differentiable Force Closure(DFC)](https://arxiv.org/abs/2104.09194). Then, we train a CMap-CVAE to generate hand-agnostic contact maps for unseen objects. We finally optimize grasping poses for unseen hands using the generated contact maps.
 
 ![pipelinde](assets/figures/pipeline.png)
 
@@ -40,7 +40,7 @@ Note that the `pytorch_kinematics` dependency is modified, you should install it
 
 ## Data Preparation
 
-#### Robots and Objects
+### Robots and Objects
 
 We train and test on 58 daily objects from [YCB](https://www.ycbbenchmarks.com/) and [ContactDB](https://contactdb.cc.gatech.edu/) dataset, together with 5 robotic hands(EZGripper, Barrett Hand, Robotiq-3F, Allegro and Shadowhand) ranging from two to five fingers.
 
@@ -56,9 +56,9 @@ GenDexGrasp
 |  |  ...
 ```
 
-#### MultiDex Dataset
+### MultiDex Dataset
 
-We synthesis a large-scale `MultiDex` Dataset with [Differentiable Force Closure](https://arxiv.org/abs/2104.09194), you can download `MultiDex.zip` from [Google Drive](https://drive.google.com/file/d/1r0rV5eEtvoy8bF02uwo1bFfMn7Ya3gJx/view?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1IWiBqQiwe6qV11Q6l_2hKQ?pwd=4h2n), then extract it to the root as
+We synthesis a large-scale `MultiDex` Grasp Dataset with [DFC](https://arxiv.org/abs/2104.09194), you can download `MultiDex.zip` from [Google Drive](https://drive.google.com/file/d/1r0rV5eEtvoy8bF02uwo1bFfMn7Ya3gJx/view?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1IWiBqQiwe6qV11Q6l_2hKQ?pwd=4h2n), then extract it to the root as
 
 ```bash
 GenDexGrasp
@@ -71,17 +71,17 @@ GenDexGrasp
 |  +-- robot_object_names.json
 ```
 
-#### Contact Map Dataset
+### Contact Map Dataset
 
 We construct `CMapDataset` from Grasp Dataset to train our CMap-CVAE model in our pipeline. You can download `dataset.zip` from [Google Drive](https://drive.google.com/file/d/1yKymFebrfYFyBACR3h49JmJAdD0-qeg3/view?usp=sharing) or [Baidu Netdisk](https://drive.google.com/file/d/1yKymFebrfYFyBACR3h49JmJAdD0-qeg3/view?usp=sharing), and extract it to the root.
 
-#### IsaacGym Assets
+### IsaacGym Assets
 
 We create a testing task using IsaacGym simulators to evaluate the stability of our generated grasp pose for objects and robotic hands. You can download `env.zip` from [Google Drive](https://drive.google.com/file/d/1M_biyC7XcajSvat9FENI93kQtMA46h_3/view?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1y1Rg8GyfZ2mIZZbscDoEqg?pwd=q8n1), and extract it to the root as same as `data.zip` to build the tasks and assets.
 
 ## Usage
 
-#### Train CMap-CVAE
+### Train CMap-CVAE
 
 Train CMap-CVAE model through `train_cvae.py`, 
 
@@ -112,7 +112,7 @@ python train_pointnet_cvae.py --id=0 --disable_shadowhand --comment=example --ba
 
 to train a CMap-CVAE, which `shadowhand` is an out-of-domain robotic hand.
 
-#### Inference CMap
+### Inference CMap
 
 After training CMap-CVAE or preparing the pre-trained weight in `./ckpts/`, you can inference the contact map for our-of-domain objects through `inf_cvae.py`, 
 
@@ -133,7 +133,7 @@ python inf_cvae.py --comment=example --s_model=PointNetCVAE_SqrtUnseenShadowhand
 
 with the pre-trained weight in `./ckpts/SqrtUnseenShadowhand/weights/`.
 
-#### Grasp Pose Generation
+### Grasp Pose Generation
 
 Constructing inference cmap data for pose generation as
 
@@ -174,7 +174,7 @@ python run_grasp_gen.py --comment=example --robot_name=shadowhand --dataset=Sqrt
 
 to generate the grasping pose for out-of-domain robotic hand `shadowhand` and out-of-domain object which is the `object_id`-th object in `split_train_validate_objects.json` file.
 
-#### Stability Test
+### Stability Test
 
 You should firstly download the Isaac Gym Preview 4 release from the [Isaac Gym Web](https://developer.nvidia.com/isaac-gym), then follow the installation instructions in the documentation.
 
@@ -198,7 +198,7 @@ python run_grasp_test.py --comment= --robot_name=shadowhand --dataset=SqrtUnseen
 
 to test the stability of grasps generated from our method, which report the success rate of our grasps.
 
-#### MultiDex Visualization
+### MultiDex Visualization
 
 Visualize the `MultiDex` grasp data through `vis_multidex.py`
 
@@ -209,7 +209,7 @@ python vis_multidex.py
   --num_vis: int, number of visualization.
 ```
 
-, and you can read the name list of robotic hand and object in `./MultiDex/robot_object_names.json`.
+, and you can get the name list of robotic hand and object in `./MultiDex/robot_object_names.json`.
 
 
 ## TODO
