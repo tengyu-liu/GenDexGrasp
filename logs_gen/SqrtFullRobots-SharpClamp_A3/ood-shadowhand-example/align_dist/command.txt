@@ -1,1 +1,0 @@
-run_grasp_gen.py --comment=example --robot_name=shadowhand --dataset=SqrtFullRobots --dataset_id=SharpClamp_A3 --max_iter=100 --num_particles=32 --learning_rate=5e-3 --init_rand_scale=0.5 --domain=ood --object_id=0 --energy_func=align_dist
