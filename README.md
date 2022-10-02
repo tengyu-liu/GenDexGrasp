@@ -5,12 +5,16 @@ by [Puhao Li](https://github.com/Xiaoyao-Li)<sup> *</sup>, [Tengyu Liu](http://t
 
 <p align="center">
     <a href=''>
-      <img src='https://img.shields.io/badge/Paper-PDF-green?style=flat&logo=arXiv&logoColor=green' alt='Paper PDF'>
+      <img src='https://img.shields.io/badge/Paper-arXiv-green?style=plastic&logo=arXiv&logoColor=green' alt='Paper arXiv'>
     </a>
-    <a href='https://sites.google.com/view/gendexgrasp/gendexgrasp' style='padding-left: 0.5rem;'>
-      <img src='https://img.shields.io/badge/Project-Page-blue?style=flat&logo=Google%20chrome&logoColor=blue' alt='Project Page'>
+    <a href='https://blog-img-1302618638.cos.ap-beijing.myqcloud.com/uPic/ICRA23_GenDexGrasp.pdf'>
+      <img src='https://img.shields.io/badge/Paper-PDF-red?style=plastic&logo=adobeacrobatreader&logoColor=red' alt='Paper PDF'>
+    </a>
+    <a href='https://sites.google.com/view/gendexgrasp/home'>
+      <img src='https://img.shields.io/badge/Project-Page-blue?style=plastic&logo=Google%20chrome&logoColor=blue' alt='Project Page'>
     </a>
 </p>
+
 
 Generating dexterous grasping has been a longstanding and challenging robotic task. Despite recent progress, existing methods primarily suffer from two issues. First, most prior arts focus on a specific type of robot hand, lacking *generalizable* capability of handling unseen ones. Second, prior arts oftentimes fail to *rapidly* generate *diverse* grasps with a *high success rate*. To jointly tackle these challenges with a unified solution, we propose **GenDexGrasp**, a novel hand-agnostic grasping algorithm for generalizable grasping. 
 
@@ -20,7 +24,7 @@ GenDexGrasp is trained on our proposed large-scale multi-hand grasping dataset [
 
 ## Pipeline
 
-We first collect a large-scale synthetic dataset for multiple hands with [Differentiable Force Closure](https://arxiv.org/abs/2104.09194) . Then, we train a CMap-CVAE to generate hand-agnostic contact maps for unseen objects. We finally optimize grasping poses for unseen hands using the generated contact maps.
+We first collect a large-scale synthetic dataset for multiple robotic hands with [Differentiable Force Closure](https://arxiv.org/abs/2104.09194). Then, we train a CMap-CVAE to generate hand-agnostic contact maps for unseen objects. We finally optimize grasping poses for unseen hands using the generated contact maps.
 
 ![pipelinde](assets/figures/pipeline.png)
 
@@ -52,13 +56,24 @@ GenDexGrasp
 |  |  ...
 ```
 
-#### Grasp Dataset
+#### MultiDex Dataset
 
-Coming soon...
+We synthesis a large-scale `MultiDex` Dataset with [Differentiable Force Closure](https://arxiv.org/abs/2104.09194), you can download `MultiDex.zip` from [Google Drive](https://drive.google.com/file/d/1r0rV5eEtvoy8bF02uwo1bFfMn7Ya3gJx/view?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1IWiBqQiwe6qV11Q6l_2hKQ?pwd=4h2n), then extract it to the root as
+
+```bash
+GenDexGrasp
++-- MultiDex
+|  +-- shadowhand
+|  +-- allegro
+|  +-- robotiq_3finger
+|  +-- barrett
+|  +-- ezgripper
+|  +-- robot_object_names.json
+```
 
 #### Contact Map Dataset
 
-We construct `CMapDataset` from Grasp Dataset to train our CMap-CVAE model in our pipeline. You can download `dataset.zip` form [Google Drive](https://drive.google.com/file/d/1yKymFebrfYFyBACR3h49JmJAdD0-qeg3/view?usp=sharing) or [Baidu Netdisk](https://drive.google.com/file/d/1yKymFebrfYFyBACR3h49JmJAdD0-qeg3/view?usp=sharing), and extract it to the root.
+We construct `CMapDataset` from Grasp Dataset to train our CMap-CVAE model in our pipeline. You can download `dataset.zip` from [Google Drive](https://drive.google.com/file/d/1yKymFebrfYFyBACR3h49JmJAdD0-qeg3/view?usp=sharing) or [Baidu Netdisk](https://drive.google.com/file/d/1yKymFebrfYFyBACR3h49JmJAdD0-qeg3/view?usp=sharing), and extract it to the root.
 
 #### IsaacGym Assets
 
@@ -183,9 +198,18 @@ python run_grasp_test.py --comment= --robot_name=shadowhand --dataset=SqrtUnseen
 
 to test the stability of grasps generated from our method, which report the success rate of our grasps.
 
-#### MultiDex
+#### MultiDex Visualization
 
-A large-scale grasping dataset for multiple robotic hands. Coming soon...
+Visualize the `MultiDex` grasp data through `vis_multidex.py`
+
+```bash
+python vis_multidex.py
+  --robot_name: str, name of robotic hand.
+  --object_name: str, name of object.
+  --num_vis: int, number of visualization.
+```
+
+, and you can read the name list of robotic hand and object in `./MultiDex/robot_object_names.json`.
 
 
 ## TODO
@@ -200,6 +224,6 @@ A large-scale grasping dataset for multiple robotic hands. Coming soon...
   - [x] Dependency (requirements.txt)
   - [x] pytorch_kinematics
   - [x] IsaacGym
-+ [ ] MultiDex Dataset
-  + [ ] Download link
-  + [ ] Usage
++ [x] MultiDex Dataset
+  + [x] Download link
+  + [x] Usage
