@@ -41,7 +41,7 @@ if __name__ == '__main__':
     print(args)
     print(f'double check....')
 
-    logs_basedir = os.path.join('logs_opt', f'{args.dataset}-{args.dataset_id}', f'{args.domain}-{args.robot_name}-{args.comment}', f'{args.energy_func}')
+    logs_basedir = os.path.join('logs_gen', f'{args.dataset}-{args.dataset_id}', f'{args.domain}-{args.robot_name}-{args.comment}', f'{args.energy_func}')
     tb_dir = os.path.join(logs_basedir, 'tb_dir')
     tra_dir = os.path.join(logs_basedir, 'tra_dir')
     os.makedirs(logs_basedir, exist_ok=True)

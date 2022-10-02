@@ -120,10 +120,10 @@ if __name__ == '__main__':
     device = "cuda"
 
     # load dataset
-    object_list = json.load(open(os.path.join('logs_gen', args.dataset, 'split_train_validate_objects.json'), 'rb'))['validate']
+    object_list = json.load(open(os.path.join('logs_opt', args.dataset, 'split_train_validate_objects.json'), 'rb'))['validate']
     object_list.sort()
 
-    data_basedir = os.path.join('logs_gen', args.dataset, f'{args.domain}-{args.robot_name}-{args.comment}', args.base_name)
+    data_basedir = os.path.join('logs_opt', args.dataset, f'{args.domain}-{args.robot_name}-{args.comment}', args.base_name)
     record_path = os.path.join(data_basedir, f'test_record-{time_tag}.json')
     tra_dir = os.path.join(data_basedir, 'tra_dir')
     tra_path_list = os.listdir(tra_dir)
