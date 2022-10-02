@@ -138,4 +138,5 @@ logs_opt/
 envs/assets/
 .idea/
 logs_gen/
+MultiDex/*/
 *.zip
