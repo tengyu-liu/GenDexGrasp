@@ -46,7 +46,7 @@ We train and test on 58 daily objects from [YCB](https://www.ycbbenchmarks.com/)
 
 You can download `data.zip` from [Google Drive](https://drive.google.com/file/d/1WRV7m9AAfDOFE6Z9InIRJwhhlRUSQzCX/view?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1UGC9Nhqp0C799bJ7IXz2iQ?pwd=md8u), then extract it to the root as
 
-```sh
+```bash
 GenDexGrasp
 +-- data
 |  +-- object
