@@ -211,19 +211,6 @@ python vis_multidex.py
 
 , and you can get the name list of robotic hand and object in `./MultiDex/robot_object_names.json`.
 
+## Contact
 
-## TODO
-
-+ [x] Inference
-  - [x] Model Weights
-  - [x] Inference Code
-+ [x] Train
-  + [x] Training Data (CMap Dataset)
-  + [x] Training Code
-+ [x] Env
-  - [x] Dependency (requirements.txt)
-  - [x] pytorch_kinematics
-  - [x] IsaacGym
-+ [x] MultiDex Dataset
-  + [x] Download link
-  + [x] Usage
+If you have any questions about this work, fell free to contact Puhao Li at liph19@mails.tsinghua.edu.cn
