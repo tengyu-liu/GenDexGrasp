@@ -1,16 +1,21 @@
 # GenDexGrasp
-Code Repository for ICRA 2023 Submission paper **GenDexGrasp: Generalizable Dexterous Grasping**
+Code Repository for **GenDexGrasp: Generalizable Dexterous Grasping**
 
-by [Puhao Li](https://github.com/Xiaoyao-Li)<sup> *</sup>, [Tengyu Liu](http://tengyu.ai/)<sup> *</sup>, [Yuyang Li](https://github.com/YuyangLee), [Yiran Geng](https://github.com/GengYiran), [Yixin Zhu](https://yzhu.io/), [Yaodong Yang](https://www.yangyaodong.com/), [Siyuan Huang](https://siyuanhuang.com/)
+by [Puhao Li](https://github.com/Xiaoyao-Li)<sup> *</sup>, [Tengyu Liu](http://tengyu.ai/)<sup> *</sup>, [Yuyang Li](https://github.com/YuyangLee), [Yiran Geng](https://gengyiran.github.io/), [Yixin Zhu](https://yzhu.io/), [Yaodong Yang](https://www.yangyaodong.com/), [Siyuan Huang](https://siyuanhuang.com/)
 
 <p align="center">
-    <a href=''>
-      <img src='https://img.shields.io/badge/Paper-PDF-green?style=flat&logo=arXiv&logoColor=green' alt='Paper PDF'>
+    <a href='https://arxiv.org/abs/2210.00722'>
+      <img src='https://img.shields.io/badge/Paper-arXiv-green?style=plastic&logo=arXiv&logoColor=green' alt='Paper arXiv'>
     </a>
-    <a href='https://sites.google.com/view/gendexgrasp/gendexgrasp' style='padding-left: 0.5rem;'>
-      <img src='https://img.shields.io/badge/Project-Page-blue?style=flat&logo=Google%20chrome&logoColor=blue' alt='Project Page'>
+    <a href='https://blog-img-1302618638.cos.ap-beijing.myqcloud.com/uPic/ICRA23_GenDexGrasp.pdf'>
+      <img src='https://img.shields.io/badge/Paper-PDF-red?style=plastic&logo=adobeacrobatreader&logoColor=red' alt='Paper PDF'>
+    </a>
+    <a href='https://sites.google.com/view/gendexgrasp/home'>
+      <img src='https://img.shields.io/badge/Project-Page-blue?style=plastic&logo=Google%20chrome&logoColor=blue' alt='Project Page'>
     </a>
 </p>
+
+
 
 Generating dexterous grasping has been a longstanding and challenging robotic task. Despite recent progress, existing methods primarily suffer from two issues. First, most prior arts focus on a specific type of robot hand, lacking *generalizable* capability of handling unseen ones. Second, prior arts oftentimes fail to *rapidly* generate *diverse* grasps with a *high success rate*. To jointly tackle these challenges with a unified solution, we propose **GenDexGrasp**, a novel hand-agnostic grasping algorithm for generalizable grasping. 
 
@@ -20,7 +25,7 @@ GenDexGrasp is trained on our proposed large-scale multi-hand grasping dataset [
 
 ## Pipeline
 
-We first collect a large-scale synthetic dataset for multiple hands with [Differentiable Force Closure](https://arxiv.org/abs/2104.09194) . Then, we train a CMap-CVAE to generate hand-agnostic contact maps for unseen objects. We finally optimize grasping poses for unseen hands using the generated contact maps.
+We first collect a large-scale synthetic dataset for multiple robotic hands with [Differentiable Force Closure(DFC)](https://arxiv.org/abs/2104.09194). Then, we train a CMap-CVAE to generate hand-agnostic contact maps for unseen objects. We finally optimize grasping poses for unseen hands using the generated contact maps.
 
 ![pipelinde](assets/figures/pipeline.png)
 
@@ -36,13 +41,13 @@ Note that the `pytorch_kinematics` dependency is modified, you should install it
 
 ## Data Preparation
 
-#### Robots and Objects
+### Robots and Objects
 
 We train and test on 58 daily objects from [YCB](https://www.ycbbenchmarks.com/) and [ContactDB](https://contactdb.cc.gatech.edu/) dataset, together with 5 robotic hands(EZGripper, Barrett Hand, Robotiq-3F, Allegro and Shadowhand) ranging from two to five fingers.
 
 You can download `data.zip` from [Google Drive](https://drive.google.com/file/d/1WRV7m9AAfDOFE6Z9InIRJwhhlRUSQzCX/view?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1UGC9Nhqp0C799bJ7IXz2iQ?pwd=md8u), then extract it to the root as
 
-```sh
+```bash
 GenDexGrasp
 +-- data
 |  +-- object
@@ -52,21 +57,32 @@ GenDexGrasp
 |  |  ...
 ```
 
-#### Grasp Dataset
+### MultiDex Dataset
 
-Coming soon...
+We synthesis a large-scale `MultiDex` Grasp Dataset with [DFC](https://arxiv.org/abs/2104.09194), you can download `MultiDex.zip` from [Google Drive](https://drive.google.com/file/d/1r0rV5eEtvoy8bF02uwo1bFfMn7Ya3gJx/view?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1IWiBqQiwe6qV11Q6l_2hKQ?pwd=4h2n), then extract it to the root as
 
-#### Contact Map Dataset
+```bash
+GenDexGrasp
++-- MultiDex
+|  +-- shadowhand
+|  +-- allegro
+|  +-- robotiq_3finger
+|  +-- barrett
+|  +-- ezgripper
+|  +-- robot_object_names.json
+```
 
-We construct `CMapDataset` from Grasp Dataset to train our CMap-CVAE model in our pipeline. You can download `dataset.zip` form [Google Drive](https://drive.google.com/file/d/1yKymFebrfYFyBACR3h49JmJAdD0-qeg3/view?usp=sharing) or [Baidu Netdisk](https://drive.google.com/file/d/1yKymFebrfYFyBACR3h49JmJAdD0-qeg3/view?usp=sharing), and extract it to the root.
+### Contact Map Dataset
 
-#### IsaacGym Assets
+We construct `CMapDataset` from Grasp Dataset to train our CMap-CVAE model in our pipeline. You can download `dataset.zip` from [Google Drive](https://drive.google.com/file/d/1yKymFebrfYFyBACR3h49JmJAdD0-qeg3/view?usp=sharing) or [Baidu Netdisk](https://drive.google.com/file/d/1yKymFebrfYFyBACR3h49JmJAdD0-qeg3/view?usp=sharing), and extract it to the root.
+
+### IsaacGym Assets
 
 We create a testing task using IsaacGym simulators to evaluate the stability of our generated grasp pose for objects and robotic hands. You can download `env.zip` from [Google Drive](https://drive.google.com/file/d/1M_biyC7XcajSvat9FENI93kQtMA46h_3/view?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1y1Rg8GyfZ2mIZZbscDoEqg?pwd=q8n1), and extract it to the root as same as `data.zip` to build the tasks and assets.
 
 ## Usage
 
-#### Train CMap-CVAE
+### Train CMap-CVAE
 
 Train CMap-CVAE model through `train_cvae.py`, 
 
@@ -97,7 +113,7 @@ python train_pointnet_cvae.py --id=0 --disable_shadowhand --comment=example --ba
 
 to train a CMap-CVAE, which `shadowhand` is an out-of-domain robotic hand.
 
-#### Inference CMap
+### Inference CMap
 
 After training CMap-CVAE or preparing the pre-trained weight in `./ckpts/`, you can inference the contact map for our-of-domain objects through `inf_cvae.py`, 
 
@@ -118,7 +134,7 @@ python inf_cvae.py --comment=example --s_model=PointNetCVAE_SqrtUnseenShadowhand
 
 with the pre-trained weight in `./ckpts/SqrtUnseenShadowhand/weights/`.
 
-#### Grasp Pose Generation
+### Grasp Pose Generation
 
 Constructing inference cmap data for pose generation as
 
@@ -159,7 +175,7 @@ python run_grasp_gen.py --comment=example --robot_name=shadowhand --dataset=Sqrt
 
 to generate the grasping pose for out-of-domain robotic hand `shadowhand` and out-of-domain object which is the `object_id`-th object in `split_train_validate_objects.json` file.
 
-#### Stability Test
+### Stability Test
 
 You should firstly download the Isaac Gym Preview 4 release from the [Isaac Gym Web](https://developer.nvidia.com/isaac-gym), then follow the installation instructions in the documentation.
 
@@ -183,23 +199,34 @@ python run_grasp_test.py --comment= --robot_name=shadowhand --dataset=SqrtUnseen
 
 to test the stability of grasps generated from our method, which report the success rate of our grasps.
 
-#### MultiDex
+### MultiDex Visualization
 
-A large-scale grasping dataset for multiple robotic hands. Coming soon...
+Visualize the `MultiDex` grasp data through `vis_multidex.py`
 
+```bash
+python vis_multidex.py
+  --robot_name: str, name of robotic hand.
+  --object_name: str, name of object.
+  --num_vis: int, number of visualization.
+```
 
-## TODO
+, and you can get the name list of robotic hand and object in `./MultiDex/robot_object_names.json`.
 
-+ [x] Inference
-  - [x] Model Weights
-  - [x] Inference Code
-+ [x] Train
-  + [x] Training Data (CMap Dataset)
-  + [x] Training Code
-+ [x] Env
-  - [x] Dependency (requirements.txt)
-  - [x] pytorch_kinematics
-  - [x] IsaacGym
-+ [ ] MultiDex Dataset
-  + [ ] Download link
-  + [ ] Usage
+## Citation
+
+If you find this work is helpful, please consider citing us as
+
+```
+@misc{li2022gendexgrasp,
+      title={GenDexGrasp: Generalizable Dexterous Grasping}, 
+      author={Puhao Li and Tengyu Liu and Yuyang Li and Yiran Geng and Yixin Zhu and Yaodong Yang and Siyuan Huang},
+      year={2022},
+      eprint={2210.00722},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}
+}
+```
+
+## Contact
+
+If you have any questions about this work, fell free to contact Puhao Li at liph19@mails.tsinghua.edu.cn

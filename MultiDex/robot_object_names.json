@@ -1,4 +1,5 @@
-{"object_list": ["contactdb+alarm_clock", "contactdb+banana", "contactdb+binoculars",
+{ "robot_list": ["shadowhand", "allegro", "robotiq_3finger", "barrett", "ezgripper"],
+  "object_list": ["contactdb+alarm_clock", "contactdb+banana", "contactdb+binoculars",
    "contactdb+cell_phone", "contactdb+cube_large", "contactdb+cube_medium",
   "contactdb+cube_small", "contactdb+cylinder_large", "contactdb+cylinder_small",
   "contactdb+elephant", "contactdb+flashlight", "contactdb+hammer",
