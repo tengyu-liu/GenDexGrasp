@@ -4,7 +4,7 @@ Code Repository for **GenDexGrasp: Generalizable Dexterous Grasping**
 by [Puhao Li](https://github.com/Xiaoyao-Li)<sup> *</sup>, [Tengyu Liu](http://tengyu.ai/)<sup> *</sup>, [Yuyang Li](https://github.com/YuyangLee), [Yiran Geng](https://gengyiran.github.io/), [Yixin Zhu](https://yzhu.io/), [Yaodong Yang](https://www.yangyaodong.com/), [Siyuan Huang](https://siyuanhuang.com/)
 
 <p align="center">
-    <a href='https://blog-img-1302618638.cos.ap-beijing.myqcloud.com/uPic/ICRA23_GenDexGrasp.pdf'>
+    <a href='https://arxiv.org/abs/2210.00722'>
       <img src='https://img.shields.io/badge/Paper-arXiv-green?style=plastic&logo=arXiv&logoColor=green' alt='Paper arXiv'>
     </a>
     <a href='https://blog-img-1302618638.cos.ap-beijing.myqcloud.com/uPic/ICRA23_GenDexGrasp.pdf'>
@@ -211,6 +211,21 @@ python vis_multidex.py
 ```
 
 , and you can get the name list of robotic hand and object in `./MultiDex/robot_object_names.json`.
+
+## Citation
+
+If you find this work is helpful, please consider citing us as
+
+```
+@misc{li2022gendexgrasp,
+      title={GenDexGrasp: Generalizable Dexterous Grasping}, 
+      author={Puhao Li and Tengyu Liu and Yuyang Li and Yiran Geng and Yixin Zhu and Yaodong Yang and Siyuan Huang},
+      year={2022},
+      eprint={2210.00722},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}
+}
+```
 
 ## Contact
 
