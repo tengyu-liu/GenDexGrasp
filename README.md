@@ -1,7 +1,7 @@
 # GenDexGrasp
 Code Repository for **GenDexGrasp: Generalizable Dexterous Grasping**
 
-by [Puhao Li](https://github.com/Xiaoyao-Li)<sup> *</sup>, [Tengyu Liu](http://tengyu.ai/)<sup> *</sup>, [Yuyang Li](https://github.com/YuyangLee), [Yiran Geng](https://gengyiran.github.io/), [Yixin Zhu](https://yzhu.io/), [Yaodong Yang](https://www.yangyaodong.com/), [Siyuan Huang](https://siyuanhuang.com/)
+by [Puhao Li](https://xiaoyao-li.github.io/)<sup> *</sup>, [Tengyu Liu](http://tengyu.ai/)<sup> *</sup>, [Yuyang Li](https://github.com/YuyangLee), [Yiran Geng](https://gengyiran.github.io/), [Yixin Zhu](https://yzhu.io/), [Yaodong Yang](https://www.yangyaodong.com/), [Siyuan Huang](https://siyuanhuang.com/)
 
 <p align="center">
     <a href='https://arxiv.org/abs/2210.00722'>
