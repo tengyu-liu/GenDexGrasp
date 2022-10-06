@@ -217,13 +217,11 @@ python vis_multidex.py
 If you find this work is helpful, please consider citing us as
 
 ```
-@misc{li2022gendexgrasp,
-      title={GenDexGrasp: Generalizable Dexterous Grasping}, 
-      author={Puhao Li and Tengyu Liu and Yuyang Li and Yiran Geng and Yixin Zhu and Yaodong Yang and Siyuan Huang},
-      year={2022},
-      eprint={2210.00722},
-      archivePrefix={arXiv},
-      primaryClass={cs.RO}
+@article{li2022gendexgrasp,
+  title={GenDexGrasp: Generalizable Dexterous Grasping},
+  author={Li, Puhao and Liu, Tengyu and Li, Yuyang and Zhu, Yixin and Yang, Yaodong and Huang, Siyuan},
+  journal={arXiv preprint arXiv:2210.00722},
+  year={2022}
 }
 ```
 
