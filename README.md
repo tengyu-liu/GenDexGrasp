@@ -1,7 +1,7 @@
 # GenDexGrasp
 Code Repository for **GenDexGrasp: Generalizable Dexterous Grasping**
 
-by [Puhao Li](https://github.com/Xiaoyao-Li)<sup> *</sup>, [Tengyu Liu](http://tengyu.ai/)<sup> *</sup>, [Yuyang Li](https://github.com/YuyangLee), [Yiran Geng](https://gengyiran.github.io/), [Yixin Zhu](https://yzhu.io/), [Yaodong Yang](https://www.yangyaodong.com/), [Siyuan Huang](https://siyuanhuang.com/)
+by [Puhao Li](https://xiaoyao-li.github.io/)<sup> *</sup>, [Tengyu Liu](http://tengyu.ai/)<sup> *</sup>, [Yuyang Li](https://blog.aidenli.net/), [Yiran Geng](https://gengyiran.github.io/), [Yixin Zhu](https://yzhu.io/), [Yaodong Yang](https://www.yangyaodong.com/), [Siyuan Huang](https://siyuanhuang.com/)
 
 <p align="center">
     <a href='https://arxiv.org/abs/2210.00722'>
@@ -217,13 +217,11 @@ python vis_multidex.py
 If you find this work is helpful, please consider citing us as
 
 ```
-@misc{li2022gendexgrasp,
-      title={GenDexGrasp: Generalizable Dexterous Grasping}, 
-      author={Puhao Li and Tengyu Liu and Yuyang Li and Yiran Geng and Yixin Zhu and Yaodong Yang and Siyuan Huang},
-      year={2022},
-      eprint={2210.00722},
-      archivePrefix={arXiv},
-      primaryClass={cs.RO}
+@article{li2022gendexgrasp,
+  title={GenDexGrasp: Generalizable Dexterous Grasping},
+  author={Li, Puhao and Liu, Tengyu and Li, Yuyang and Zhu, Yixin and Yang, Yaodong and Huang, Siyuan},
+  journal={arXiv preprint arXiv:2210.00722},
+  year={2022}
 }
 ```
 
