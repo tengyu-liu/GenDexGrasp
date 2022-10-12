@@ -343,7 +343,7 @@ class IsaacGraspTestForce_shadowhand(BaseTask):
         if self.dexterous_loaded == False:
             self.dexterous_actor_list = []
             asset_root = self.asset_root
-            dexterous_asset_file = "franka_description/robots/movable_dexterous_hand_new.urdf"
+            dexterous_asset_file = "movable_hand_urdf/shadowhand/robots/movable_shadowhand.urdf"
             # dexterous_asset_file = "franka_description/robots/movable_dexterous_hand_fine_collision.urdf"
             asset_options = gymapi.AssetOptions()
             asset_options.density = self.cfg['agent']['density']

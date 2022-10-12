@@ -37,7 +37,20 @@ Run the following instruction in a conda environment to build the dependencies
 conda install requirements.yaml
 ```
 
-Note that the `pytorch_kinematics` dependency is modified, you should install it from the source code in `./thirdparty/pytorch_kinematics/`
+Note that the `pytorch-kinematics` dependency is modified, you should install it from the source code as following
+
+```bash
+cd thirdparty/pytorch_kinematics
+pip install -e .
+```
+
+After install that, run
+
+```bash
+pip install urdf-parser-py
+```
+
+to install `urdf-parser-py` lib to resolve the conflict between `pytorch-kinematics` and `urdf-parser-py`.
 
 ## Data Preparation
 
@@ -108,7 +121,7 @@ python train_cvae.py
 For instance, you can run
 
 ```bash
-python train_pointnet_cvae.py --id=0 --disable_shadowhand --comment=example --batchsize=128 --n_epochs=36 --lr=1e-4 --lw_recon=1000 --lw_kld=0.05 --ann_temp=1.5 --ann_per_epochs=2 --batches_per_print=500 --attn_loss_alpha=3.
+python train_cvae.py --id=0 --disable_shadowhand --comment=example --batchsize=128 --n_epochs=36 --lr=1e-4 --lw_recon=1000 --lw_kld=0.05 --ann_temp=1.5 --ann_per_epochs=2 --batches_per_print=500 --attn_loss_alpha=3.
 ```
 
 to train a CMap-CVAE, which `shadowhand` is an out-of-domain robotic hand.
@@ -194,7 +207,7 @@ python run_grasp_test.py
 For instance you can run 
 
 ```bash
-python run_grasp_test.py --comment= --robot_name=shadowhand --dataset=SqrtUnseenShadowhand-SharpClamp_A3 --domain=ood --base_name=align_dist --comment=example
+python run_grasp_test.py --robot_name=shadowhand --dataset=SqrtUnseenShadowhand-SharpClamp_A3 --domain=ood --base_name=align_dist --comment=example
 ```
 
 to test the stability of grasps generated from our method, which report the success rate of our grasps.
