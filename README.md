@@ -240,4 +240,4 @@ If you find this work is helpful, please consider citing us as
 
 ## Contact
 
-If you have any questions about this work, fell free to contact Puhao Li at liph19@mails.tsinghua.edu.cn
+If you have any questions about this work, feel free to contact Puhao Li at liph19@mails.tsinghua.edu.cn
