@@ -1,5 +1,5 @@
 # GenDexGrasp
-Code Repository for **GenDexGrasp: Generalizable Dexterous Grasping**
+Code Repository for **GenDexGrasp: Generalizable Dexterous Grasping** 
 
 by [Puhao Li](https://xiaoyao-li.github.io/)<sup> *</sup>, [Tengyu Liu](http://tengyu.ai/)<sup> *</sup>, [Yuyang Li](https://blog.aidenli.net/), [Yiran Geng](https://gengyiran.github.io/), [Yixin Zhu](https://yzhu.io/), [Yaodong Yang](https://www.yangyaodong.com/), [Siyuan Huang](https://siyuanhuang.com/)
 
