@@ -1,0 +1,34 @@
+# .github/workflows/sync-to-gitlab.yml
+
+name: Sync to GitLab
+
+# 触发条件：当有 push 操作到 main 分支时触发
+on:
+  push:
+    branches:
+      - **  # 你可以修改为你需要同步的分支，或者使用 [ '**' ] 来匹配所有分支
+
+# 任务
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      # 步骤一：检出代码
+      # 使用 fetch-depth: 0 来获取所有的历史记录和分支/标签
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 步骤二：执行推送命令
+      # 使用 --mirror 参数来确保所有分支和标签都被完整推送
+      - name: Push to GitLab
+        env:
+          GITLAB_USERNAME: ${{ secrets.GITLAB_USERNAME }}
+          GITLAB_TOKEN: ${{ secrets.GITLAB_PRIVATE_TOKEN }}
+          # 替换为你的 GitLab 仓库地址
+          GITLAB_REPO_URL: "https://gitlab.mybigai.ac.cn/liutengyu/GenDexGrasp.git"
+        run: |
+          echo "Pushing to GitLab..."
+          git push --mirror "https://${GITLAB_USERNAME}:${GITLAB_TOKEN}@${GITLAB_REPO_URL#https://}"
+          echo "Push completed."
